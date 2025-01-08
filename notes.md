@@ -29,8 +29,12 @@
 - add the layout
 - bring in sidebar
 - update the functionality
-- add npm i sooner
+- add npm i sonner
 - bring into the layout
 
 
 # DOCUMENTS
+- update the schema
+- add the document api
+- add in the dashboard page
+- create a document with the test to show the toast notification
