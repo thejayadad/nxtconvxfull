@@ -28,3 +28,6 @@
 - add dashboard page
 - add the layout
 - bring in sidebar
+- update the functionality
+- add npm i sooner
+- bring into the layout
