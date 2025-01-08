@@ -13,6 +13,7 @@ export default defineSchema({
     userId: v.string(),
     isArchived: v.boolean(),
     content: v.optional(v.string()),
+    color: v.optional(v.string()),
     coverImage: v.optional(v.string()),
     icon: v.optional(v.string()),
     isPublished: v.boolean()
