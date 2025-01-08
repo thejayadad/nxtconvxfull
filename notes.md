@@ -22,3 +22,9 @@
 # LAYOUT
 - update the page
 - add a layout
+
+# SIDEBAR
+- fix the layout
+- add dashboard page
+- add the layout
+- bring in sidebar
