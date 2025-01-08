@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { useUser } from '@clerk/nextjs';
+import { UserButton, useUser } from '@clerk/nextjs';
 
 const Sidebar: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -60,11 +60,17 @@ const Sidebar: React.FC = () => {
           <div className="flex items-center space-x-2">
             {/* User profile image */}
             {user?.imageUrl && !isCollapsed && (
-              <img
-                src={user.imageUrl}
-                alt="User Profile"
-                className="w-6 h-6 rounded-full"
-              />
+            //   <img
+            //     src={user.imageUrl}
+            //     alt="User Profile"
+            //     className="w-6 h-6 rounded-full"
+            //   />
+            <>
+            
+                <div className='z-[999999999]'>
+                <UserButton />
+                </div>
+            </>
             )}
             {/* Conditionally render user email */}
             {!isCollapsed && (
