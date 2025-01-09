@@ -11,7 +11,7 @@ const DashboardPage = () => {
   const create = useMutation(api.documents.create)
 
   const onCreate = () => {
-    const promise = create({title: ''})
+    const promise = create({title: 'Testing...'})
     toast.promise(promise, {
       loading: 'Creating a document...',
       success: 'New document created!',

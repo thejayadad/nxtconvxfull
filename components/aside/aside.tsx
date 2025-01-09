@@ -6,6 +6,8 @@ import { useUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import { useQuery } from 'convex/react';
 import { api } from '@/convex/_generated/api';
+import { Button } from '@nextui-org/button';
+import Logo from '../logo';
 
 const AsideBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -30,7 +32,11 @@ const AsideBar: React.FC = () => {
         }`}
       >
         {isVisible && (
-          <div className="px-4 py-16">
+         <div className='py-4'>
+            <div className='flex justify-end w-full px-4'>
+            <Logo />
+            </div>
+           <div className="px-4 py-4">
             {/* User Info */}
             <div className="flex items-center w-full justify-between py-6">
               <div className="flex items-center space-x-2">
@@ -51,17 +57,18 @@ const AsideBar: React.FC = () => {
 
             {/* Documents */}
             <div className="mt-4">
-              <h3 className="text-sm font-bold text-neutral-800">Documents</h3>
+              <h3 className="text-sm font-bold text-neutral-500">Documents</h3>
               {documents ? (
                 documents.length > 0 ? (
                   <ul className="mt-2 space-y-2">
                     {documents.map((doc: { _id: string; title: string }) => (
-                      <li
+                      <Button
                         key={doc._id}
-                        className="text-sm text-neutral-700 bg-gray-100 p-2 rounded hover:bg-gray-200"
+                        className='w-full text-white btn-sm'
+                        color="warning"
                       >
                         {doc.title}
-                      </li>
+                      </Button>
                     ))}
                   </ul>
                 ) : (
@@ -72,15 +79,16 @@ const AsideBar: React.FC = () => {
               )}
             </div>
           </div>
+         </div>
         )}
       </aside>
       {/* Toggle Button */}
       <button
         onClick={handleToggle}
-        className="absolute top-4 left-3 z-[100000] bg-blue-400 p-1 border border-blue-900 rounded-full shadow-md"
+        className="absolute top-4 left-3 z-[100000] bg-primary p-1 border rounded-full shadow-md"
       >
         {isVisible ? (
-          <FiChevronLeft className="h-6 w-6 text-orange-600" />
+          <FiChevronLeft className="h-6 w-6 text-white" />
         ) : (
           <FiChevronRight className="h-6 w-6 text-white" />
         )}

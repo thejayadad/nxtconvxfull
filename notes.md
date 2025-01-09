@@ -38,3 +38,4 @@
 - add the document api
 - add in the dashboard page
 - create a document with the test to show the toast notification
+- logo is in this branch
