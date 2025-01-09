@@ -64,8 +64,8 @@ const AsideBar: React.FC = () => {
                     {documents.map((doc: { _id: string; title: string }) => (
                       <Button
                         key={doc._id}
-                        className='w-full text-white btn-sm'
-                        color="warning"
+                        className='w-full text-primary btn-sm'
+                   color="primary" variant="bordered"
                       >
                         {doc.title}
                       </Button>
