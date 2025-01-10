@@ -13,9 +13,8 @@ const MobileSidebar: React.FC = () => {
 
   return (
     <div>
-      {/* Menu Button */}
       <button
-        className="fixed top-4 left-4 z-50 flex items-center justify-center w-12 h-12 bg-primary text-white rounded-full transition-transform transform hover:scale-105"
+        className=" lg:hidden  flex items-center justify-center w-10 h-10 bg-primary text-white rounded-full transition-transform transform hover:scale-105"
         onClick={toggleDrawer}
         aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
       >
