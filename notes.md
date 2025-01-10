@@ -259,3 +259,6 @@ const ActionItem: React.FC<ActionProps> = ({
 export default ActionItem;
 
 ```
+
+# SEARCH FUNCTIONALITY
+ - 
