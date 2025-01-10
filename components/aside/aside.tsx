@@ -10,13 +10,13 @@ import Logo from '../logo';
 import AsideItem from './aside-item';
 import { toast } from 'sonner';
 import ActionItem from './item';
+import DocumentList from './document-list';
 
 const AsideBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const { user } = useUser();
   const create = useMutation(api.documents.create);
 
-  const documents = useQuery(api.documents.get);
 
   const handleToggle = () => {
     setIsVisible(!isVisible);
@@ -72,30 +72,7 @@ const AsideBar: React.FC = () => {
             
               <div className="mt-4">
                 <h3 className="text-sm font-bold text-neutral-500">Documents</h3>
-                {documents ? (
-                  documents.length > 0 ? (
-                    <ul className="mt-2 space-y-2">
-                      {documents.map((doc: { _id: string; title: string; coverImage?: string }) => (
-                        // <AsideItem
-                        //   key={doc._id}
-                        //   id={doc._id}
-                        //   label={doc.title}
-                        //   coverImage={doc.coverImage}
-                        //   onClick={() => toast(`Open document: ${doc.title}`)}
-                        //   expanded
-                        //   icon={FiChevronRight}
-                        // />
-                        <div key={doc._id}>
-                          {doc.title}
-                        </div>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-sm text-gray-500">No documents found.</p>
-                  )
-                ) : (
-                  <p className="text-sm text-gray-500">Loading documents...</p>
-                )}
+             <DocumentList />
               </div>
             </div>
           </div>
