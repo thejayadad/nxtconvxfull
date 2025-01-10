@@ -31,7 +31,7 @@ const HeroSection = () => {
               <button className="px-6 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-all">
                 Get Started
               </button>
-            </motion.div>a          </motion.div>
+            </motion.div>          </motion.div>
 
           {/* Hero Image */}
           <motion.div

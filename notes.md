@@ -21,9 +21,10 @@
 
 # LAYOUT
 - update the page
-- add a layout
+- add a layout inside dashboard
 - tailwind css file
 - build components and global css
+- start with sidebar
 
 # HEROSECTION
 - build layout
@@ -90,8 +91,12 @@ Favorite {
 }
 
 
-````
+```
 
+# ADMIN DASHBOARD
+- build the route group
+- add the admin page
+- layout.ts
 
 
 # CREATE BOOK
