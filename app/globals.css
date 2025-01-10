@@ -37,3 +37,17 @@ body,
   @apply bg-secondary pl-10 sm:pl-14 pr-6 sm:pr-20 py-3 sm:py-4 rounded-xl text-accent hover:text-white hover:bg-accent transition-all duration-300 text-sm sm:text-base;
 
 }
+
+/**landing hero **/
+.landing{
+  @apply w-3/4;
+
+}
+.landing-hero{
+  @apply flex justify-between items-center mt-12 h-[500px] rounded-lg bg-secondary;
+
+}
+.landing-hero-content{
+  @apply basis-1/2 px-16 mx-auto;
+
+}

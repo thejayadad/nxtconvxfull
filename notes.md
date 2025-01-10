@@ -24,3 +24,13 @@
 - add a layout
 - tailwind css file
 - build components and global css
+
+# HEROSECTION
+- build layout
+- add nav
+- logo
+- search 
+- userbutton
+- hero section
+- framer motion build out
+
