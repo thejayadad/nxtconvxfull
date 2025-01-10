@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
-import { FiDatabase, FiHeart, FiSearch } from 'react-icons/fi'
+import { FiBarChart, FiBook, FiDatabase, FiHeart, FiSearch } from 'react-icons/fi'
 import SideItem from './side-item'
+import { usePathname } from 'next/navigation'
 
 const readerRoutes = [
     {
@@ -20,9 +21,24 @@ const readerRoutes = [
         href: '/favorite'
     },
 ]
+const authorRoutes = [
+    {
+        icon: FiBook,
+        label: 'Books',
+        href: '/author/books'
+    },
+    {
+        icon: FiBarChart,
+        label: 'Data',
+        href: '/author/data'
+    },
+
+]
 
 const SideRoutes = () => {
-    const routes = readerRoutes
+    const pathname = usePathname()
+    const isAuthorPage = pathname?.includes('/author')
+    const routes = isAuthorPage ? authorRoutes : readerRoutes
   return (
     <div className='flex flex-col w-full'>
         {routes.map((route) => (

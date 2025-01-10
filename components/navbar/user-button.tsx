@@ -13,10 +13,14 @@ const NavRoute = () => {
   return (
     <div className="flex gap-x-2 ml-auto pr-2">
         {isAuthorPage || isReaderPage ? (
-            <button className='flex items-center mr-2'>
+          <Link 
+          href={'/'}
+          >
+             <button className='flex items-center mr-2'>
                 <FiFile className='h-4 w-4 mr-2' />
                 Reader View
             </button>
+          </Link>
         ) :
             <Link
             className='mr-2 '
