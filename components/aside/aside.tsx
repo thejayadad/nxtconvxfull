@@ -44,20 +44,10 @@ const AsideBar: React.FC = () => {
       >
         {isVisible && (
           <div className="py-4">
-            <div className="flex justify-center w-full px-4">
+            <div className="flex justify-end w-full px-4">
               <Logo />
             </div>
             <div className="py-4">
-              {/* <AsideItem
-                onClick={onCreate}
-                label="New Document"
-                icon={FiPlusCircle}
-              />
-              <AsideItem
-                label="Search..."
-                icon={FiSearch}
-                onClick={() => {}}
-              /> */}
               <ActionItem
                 onClick={onCreate}
                 label="New Document"

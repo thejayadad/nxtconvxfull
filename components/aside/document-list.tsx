@@ -24,7 +24,7 @@ const DocumentList = ({documentId}: Props) => {
     }
     const documents = useQuery(api.documents.get);
     const onRedirect = (documentId: string) => {
-        router.push(`documents/${documentId}`)
+        router.push(`/dashboard/${documentId}`)
     }
   return (
     <>
