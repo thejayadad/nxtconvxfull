@@ -25,6 +25,10 @@
 - tailwind css file
 - build components and global css
 - start with sidebar
+- build it out
+- add mobile with side drawer
+- setup nav routes and toggle
+
 
 # HEROSECTION
 - build layout
