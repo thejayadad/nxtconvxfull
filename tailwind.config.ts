@@ -1,20 +1,21 @@
-import {nextui} from '@nextui-org/theme';
+import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
-import daisyui from "daisyui"
-
 
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(button|ripple|spinner).js"
+    "./node_modules/@nextui-org/theme/dist/components/(button|ripple|spinner).js",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#6C63FF",
+        secondary: "#F6B8C3",
+        accent: "#FFD56E",
+        background: "#F8F9FA",
+        foreground: "#2D3748",
       },
     },
   },
