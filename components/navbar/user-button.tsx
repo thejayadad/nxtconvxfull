@@ -2,7 +2,7 @@
 import React from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { usePathname, useRouter } from 'next/navigation';
-import { FiLogOut } from 'react-icons/fi';
+import { FiFile, FiLogOut } from 'react-icons/fi';
 import Link from 'next/link';
 
 const NavRoute = () => {
@@ -13,13 +13,13 @@ const NavRoute = () => {
   return (
     <div className="flex gap-x-2 ml-auto pr-2">
         {isAuthorPage || isReaderPage ? (
-            <button>
-                <FiLogOut className='h-4 w-4 mr-2' />
-                Exit
+            <button className='flex items-center mr-2'>
+                <FiFile className='h-4 w-4 mr-2' />
+                Reader View
             </button>
         ) :
             <Link
-            className='mr-2'
+            className='mr-2 '
                 href={'/author/books'} 
             >
                 <button>
