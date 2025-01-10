@@ -1,13 +1,14 @@
-import Logo from "@/components/logo";
-import { Button } from "@nextui-org/button";
-import Image from "next/image";
+import LandingNav from "@/components/landing/landing-nav";
+
 
 export default function Home() {
   return (
-    <div>
-      homePage
-      <Button>Hello</Button>
-      <Logo />
+    <div className="landing-layout">
+      <LandingNav />
+      <main className="landing-main">
+        Landing
+      </main>
+      Footer
     </div>
   );
 }

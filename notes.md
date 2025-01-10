@@ -22,3 +22,5 @@
 # LAYOUT
 - update the page
 - add a layout
+- tailwind css file
+- build components and global css

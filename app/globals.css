@@ -10,3 +10,30 @@ body,
   width: 100%;
   @apply bg-background text-foreground text-sm;
 }
+
+/**landing layout **/
+@layer base {
+  .landing-layout {
+    @apply flex flex-col min-h-screen w-full;
+  }
+  .landing-main{
+    @apply flex flex-grow w-full h-full justify-center items-center;
+  }
+}
+
+/**landing navbar **/
+.landing-nav{
+  @apply w-full flex justify-center border-b;
+
+}
+.landing-box{
+  @apply flex justify-between items-center w-3/4  py-8;
+}
+
+.landing-search{
+  @apply flex justify-between items-center gap-14;
+}
+.landing-nav-search{
+  @apply bg-secondary pl-10 sm:pl-14 pr-6 sm:pr-20 py-3 sm:py-4 rounded-xl text-accent hover:text-white hover:bg-accent transition-all duration-300 text-sm sm:text-base;
+
+}
