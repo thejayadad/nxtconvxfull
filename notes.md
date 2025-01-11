@@ -104,4 +104,7 @@ Favorite {
 
 
 # CREATE BOOK
+- build out the page
+- add the layout
+- npm install react-konva konva --save
 

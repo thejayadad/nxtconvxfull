@@ -23,17 +23,21 @@
     "canvas": "^3.0.1",
     "convex": "^1.17.4",
     "framer-motion": "^11.16.0",
+    "konva": "^9.3.18",
     "next": "15.1.3",
     "react": "^19.0.0",
     "react-color": "^2.19.3",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
-    "react-konva": "^19.0.2"
+    "react-input-color": "^4.0.1",
+    "react-konva": "^19.0.2",
+    "sonner": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
+    "@types/react-color": "^3.0.13",
     "@types/react-dom": "^19",
     "daisyui": "^4.12.23",
     "eslint": "^9",
