@@ -21,3 +21,12 @@ export const createBook = mutation({
         return { id: bookId };
     }
 })
+
+export const getBookById = query({
+    args: {
+        id: v.id("book")
+    },
+    handler: async (ctx, args) => {
+        return await ctx.db.get(args.id);
+      },
+  });
