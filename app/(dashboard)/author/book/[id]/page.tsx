@@ -50,8 +50,9 @@ const BookDetails = () => {
       </div>
       <h2 className='text-xl'>Update your book</h2>
       <div className='grid grid-cols-4 md:grid-cols-8 gap-6 mt-16 mx-auto max-w-screen-2xl'>
-      <div className='grid col-span-1 md:col-span-2'>
-      <TitleForm
+      <div className='col-span-1  md:col-span-2'>
+        <div className='flex flex-col'>
+        <TitleForm
           initialdata={book}
           bookId={bookId}
         />
@@ -59,8 +60,10 @@ const BookDetails = () => {
           initialdata={book}
           bookId={bookId}
         />
+        </div>
+ 
       </div>
-      <div className='grid col-span-3 md:col-span-6 bg-orange-400'>
+      <div className='grid col-span-3 h-[400px] md:col-span-6 bg-orange-400'>
         Cover Section
       </div>
        </div>
