@@ -21,7 +21,7 @@ export const createBook = mutation({
         return { id: bookId };
     }
 })
-
+    
 export const getBookById = query({
     args: {
         id: v.id("book")
@@ -30,3 +30,36 @@ export const getBookById = query({
         return await ctx.db.get(args.id);
       },
   });
+
+
+
+
+export const updateBookTitle = mutation({
+  args: {
+    id: v.id("book"), // The book ID to update
+    title: v.string(), // The new title
+  },
+  handler: async (ctx, { id, title }) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      throw new Error("Not Authenticated");
+    }
+
+    const book = await ctx.db.get(id);
+    if (!book) {
+      throw new Error("Book not found");
+    }
+
+    // Ensure the user is the owner of the book
+    if (book.userId !== identity.subject) {
+      throw new Error("You do not have permission to update this book");
+    }
+
+    // Update the book's title
+    await ctx.db.patch(id, {
+      title,
+    });
+
+    return { success: true };
+  },
+});
