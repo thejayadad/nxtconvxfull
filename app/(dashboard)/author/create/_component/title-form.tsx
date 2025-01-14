@@ -17,6 +17,7 @@ const TitleForm = ({ initialdata, bookId }: Props) => {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(initialdata.title);
   const updateTitle = useMutation(api.book.updateBookTitle);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleEditing = () => setIsEditing(!isEditing);
 
@@ -29,6 +30,7 @@ const TitleForm = ({ initialdata, bookId }: Props) => {
     e.preventDefault(); // Prevent form submission from reloading the page
 
     try {
+        
       await updateTitle({ id: bookId, title }); // Pass correct arguments
       setIsEditing(false); // Exit edit mode
       toast.success('Title updated successfully!');
@@ -39,18 +41,19 @@ const TitleForm = ({ initialdata, bookId }: Props) => {
   };
 
   return (
-    <div className="border rounded-lg shadow-sm p-4 bg-gray-100">
+    <div className="border rounded-lg shadow-sm p-4 bg-secondary/90"> 
       {/* Accordion Header */}
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={toggleEditing}
       >
         <div className="flex items-center gap-4">
-          <FiEdit size={20} className="text-primary" />
-          <div>
-            <h2 className="text-lg font-medium">Title</h2>
-            <p className="hidden lg:text-sm text-gray-600">Update your title here</p>
-          </div>
+          <FiEdit  className="text-primary h-4 w-4 md:h-6 md:w-6" />
+            <div>
+                     
+            <h2 className="text-sm md:text-xl text-white font-medium">Title</h2>
+            <p className="hidden md:block lg:text-sm text-gray-600">Update your title here</p>    
+            </div>     
         </div>
         <div>
           {isEditing ? (
@@ -65,7 +68,7 @@ const TitleForm = ({ initialdata, bookId }: Props) => {
       {isEditing && (
         <form
           onSubmit={handleSave}
-          className="md:mt-4 md:p-1  rounded-lg shadow-inner space-y-2 mt-2 transition-all duration-300"
+          className="md:mt-4 p-1 bg-gray-100 rounded-lg shadow-inner space-y-2 mt-2 transition-all duration-300"
         >
           <input
             type="text"
@@ -73,10 +76,10 @@ const TitleForm = ({ initialdata, bookId }: Props) => {
             onChange={(e) => setTitle(e.target.value)}
             name="title"
             id="title"
-            className="w-full p-1 md:p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full p-1 md:p-3  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="Enter new title"
           />
-          <div className="flex items-center justify-end space-x-4">
+          <div className="flex items-center justify-end space-x-2">
             <button
               type="button"
               onClick={handleCancel}
@@ -85,11 +88,25 @@ const TitleForm = ({ initialdata, bookId }: Props) => {
               Cancel
             </button>
             <button
-              type="submit"
-              className="px-2 md:px-4 py-1 md:py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
-            >
-              Save
-            </button>
+  type="submit"
+  disabled={isLoading}
+  className={`px-2 md:px-4 py-1 md:py-2 rounded-md flex items-center justify-center ${
+    isLoading
+      ? 'bg-gray-400 text-white cursor-not-allowed'
+      : 'bg-green-500 text-white hover:bg-green-600'
+  }`}
+>
+  {isLoading ? (
+    <div className="flex items-center space-x-2">
+      {/* Spinner Animation */}
+      <div className="h-4 w-4 border-2 border-t-transparent border-white rounded-full animate-spin"></div>
+      <span>Updating...</span>
+    </div>
+  ) : (
+    'Save'
+  )}
+</button>
+
           </div>
         </form>
       )}

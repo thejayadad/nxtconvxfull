@@ -6,6 +6,8 @@ import { api } from '@/convex/_generated/api';
 import { useParams } from 'next/navigation';
 import { Id } from '@/convex/_generated/dataModel';
 import TitleForm from '../../create/_component/title-form';
+import FormToggle from '../../create/_component/form-toggle';
+import { FiEdit2 } from 'react-icons/fi';
 
 const BookDetails = () => {
   const { id } = useParams(); // Get book ID from URL params
@@ -56,11 +58,7 @@ const BookDetails = () => {
           initialdata={book}
           bookId={bookId}
         />
-            <TitleForm
-          initialdata={book}
-          bookId={bookId}
-        />
-        </div>
+      </div>
  
       </div>
       <div className='grid col-span-3 h-[400px] md:col-span-6 bg-orange-400'>
