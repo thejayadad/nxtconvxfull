@@ -8,6 +8,7 @@ import { Id } from '@/convex/_generated/dataModel';
 import TitleForm from '../../create/_component/title-form';
 import FormToggle from '../../create/_component/form-toggle';
 import { FiEdit2 } from 'react-icons/fi';
+import SummaryForm from '../../create/_component/summary-form';
 
 const BookDetails = () => {
   const { id } = useParams(); // Get book ID from URL params
@@ -57,6 +58,10 @@ const BookDetails = () => {
         <TitleForm
           initialdata={book}
           bookId={bookId}
+        />
+        <SummaryForm
+            initialdata={book}
+            bookId={bookId}
         />
       </div>
  
