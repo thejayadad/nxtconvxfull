@@ -67,12 +67,12 @@ const SummaryForm = ({initialdata, bookId}: Props) => {
           onSubmit={handleSave}
           className="md:mt-4 p-1 bg-gray-100 rounded-lg shadow-inner space-y-2 mt-2 transition-all duration-300"
         >
-          <input
-            type="text"
+          <textarea
+          rows={6}
             defaultValue={summary}
             onChange={(e) => setSummary(e.target.value)}
-            name="title"
-            id="title"
+            name="summary"
+            id="summary"
             className="w-full p-1 md:p-3  border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="Add a insightful summary"
           />
