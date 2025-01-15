@@ -39,3 +39,7 @@
 - add basic structure the aside
 - component then aside
 
+# CREATE NOTE
+- update schema
+- add the api
+- add the create request

@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 
 export const create = mutation({
   args: {
@@ -38,3 +38,24 @@ export const create = mutation({
     return note;
   },
 });
+
+
+//GET NOTES
+export const get = query({
+  handler: async (ctx) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) {
+      throw new Error("Not Authenticated");
+    }
+    const userId = identity.subject; // Get the user's unique ID
+    console.log("Fetching notes for userId:", userId);
+
+    const notes = await ctx.db
+      .query("notes")
+      .collect(); // Ensure results are collected as an array
+
+    console.log("Fetched documents:", notes);
+
+    return notes;
+  },
+})
