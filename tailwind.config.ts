@@ -13,8 +13,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#1DA1F2', // Light Blue (Primary)
+        secondary: '#FDBA74', // Light Orange (Secondary)
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
     },
   },
