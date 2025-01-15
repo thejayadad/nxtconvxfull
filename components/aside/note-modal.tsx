@@ -22,7 +22,7 @@ const NoteModal: React.FC<NoteModalProps> = ({ isOpen, onClose, onSave }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-9999999 flex items-center justify-center bg-black bg-opacity-75">
+    <div className="fixed inset-0 z-[99999999] flex items-center justify-center bg-black bg-opacity-75">
       <div className="bg-white rounded-lg shadow-lg w-96 p-6 relative">
         {/* Close Button */}
         <button
