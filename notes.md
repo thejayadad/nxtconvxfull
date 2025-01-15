@@ -22,3 +22,20 @@
 # LAYOUT
 - update the page
 - add a layout
+
+
+# HOMEPAGE
+- create homepage
+- add hero
+- add header
+- make sure button redirects to dashboard
+
+
+# SIDEBAR
+- organize it
+- dashboard then layout
+- dashboard route
+- in layout add the auth check and redirect
+- add basic structure the aside
+- component then aside
+
