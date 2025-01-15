@@ -5,7 +5,7 @@ import { FiX } from 'react-icons/fi';
 
 interface Props {
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
   icon: IconType; // Icon type for React Icons
   isSearch?: boolean; // Flag to enable search functionality
   searchValue?: string; // Value for the search input
