@@ -2,9 +2,10 @@
 import { api } from '@/convex/_generated/api';
 import { useMutation, useQuery } from 'convex/react';
 import React, { useState } from 'react';
-import { FiChevronsLeft, FiChevronsRight, FiPlusCircle, FiSearch, FiFileText } from 'react-icons/fi';
+import { FiChevronsLeft, FiChevronsRight, FiPlusCircle, FiSearch } from 'react-icons/fi';
 import AsideItem from './aside-item';
 import NoteModal from './note-modal';
+import NoteItem from './note-item';
 
 interface Props {
   userEmail: string;
@@ -15,13 +16,9 @@ const Aside = ({ userEmail }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const toggleSidebar = () => {
-    setIsCollapsed((prev) => !prev);
-  };
+  const toggleSidebar = () => setIsCollapsed((prev) => !prev);
 
-  const handleSearchCancel = () => {
-    setSearchQuery('');
-  };
+  const handleSearchCancel = () => setSearchQuery('');
 
   // Convex API calls
   const notes = useQuery(api.note.get);
@@ -52,13 +49,17 @@ const Aside = ({ userEmail }: Props) => {
           onClick={toggleSidebar}
           className="absolute top-4 -right-1 mr-2 bg-white border border-gray-300 shadow-md p-1 rounded-full cursor-pointer hover:bg-gray-200 transition-transform duration-300"
         >
-          {isCollapsed ? <FiChevronsRight className="h-6 w-6 text-gray-600" /> : <FiChevronsLeft className="h-6 w-6 text-gray-600" />}
+          {isCollapsed ? (
+            <FiChevronsRight className="h-6 w-6 text-gray-600" />
+          ) : (
+            <FiChevronsLeft className="h-6 w-6 text-gray-600" />
+          )}
         </div>
 
         <div className="flex-1 space-y-4 p-2 px-4 rounded-lg mt-1">
           {!isCollapsed && (
             <>
-              <div className="bg-white h-20 flex items-center border-b rounded-lg p-2">
+              <div className="bg-white h-20 flex items-center  rounded-lg p-2">
                 <p>{userEmail}</p>
               </div>
 
@@ -78,16 +79,20 @@ const Aside = ({ userEmail }: Props) => {
                 />
               </div>
 
-              <div className="bg-white p-2 rounded-lg">
+              <div className="p-2 rounded-lg">
                 <h3 className="text-lg font-semibold mb-2">Notes</h3>
                 {filteredNotes && filteredNotes.length > 0 ? (
-                  <ul className="space-y-1">
+                  <ul className="">
                     {filteredNotes.map((note) => (
-                      <li key={note._id} className="p-2 bg-gray-100 rounded-md hover:bg-gray-200 transition">
-                        <AsideItem
-                          onClick={() => console.log(`Selected note: ${note.name}`)}
-                          label={note.name}
-                          icon={FiFileText}
+                      <li
+                        key={note._id}
+                        className="rounded-md hover:bg-gray-200 transition"
+                      >
+                        <NoteItem
+                          id={note._id} // Pass the note's ID
+                          title={note.name}
+                          onMoreClick={() => console.log(`More options for: ${note.name}`)}
+                          onAddClick={() => console.log(`Add action for: ${note.name}`)}
                         />
                       </li>
                     ))}
